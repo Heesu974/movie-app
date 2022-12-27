@@ -29,11 +29,6 @@ const foodILike = [
 },
 ];
 
-function renderFood(dish) {
-  console.log(dish); 
-  //라고 했을 때, inspect element 하면, 
-  return <Food key={dish.id} name={dish.name} picture={dish.image}/>
-}
 
 
 function App() {
@@ -41,7 +36,13 @@ function App() {
   return (
     <div className="App">
         <h1>Hello</h1>
-         {foodILike.map(renderFood)}
+         {foodILike.map((food) => (
+          <Food 
+            key={food.id}
+            name={food.name}
+            picture={food.image}
+          />
+         ))}
     </div>
   );
 }
@@ -49,3 +50,4 @@ function App() {
 export default App;
  
 //map은 각 item 별로 function을 호출
+//
