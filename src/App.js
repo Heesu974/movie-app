@@ -1,41 +1,49 @@
 
 import React from 'react';
 
-function Food({name}) {
+function Food({name, picture}) {
  
-  return (<h3>I like {name}</h3>)
+  return (
+   <div>
+    <img src={picture}/>
+    <h3>{name}</h3>
+   </div>
+  )
 }
 
-
+const foodILike = [
+  {
+  name: "kimchi",
+  image: 'https://www.beyondkimchee.com/wp-content/uploads/2022/04/Kimchi-Jjigae-thumbnail.jpg'
+},
+{
+  name: "kimbab",
+  image: 'https://thumbs.dreamstime.com/z/kimbab-asian-style-gimbap-kimbap-korean-dish-made-steamed-white-rice-bap-various-other-ingredients-rolled-gim-81838757.jpg'
+},
+{
+  name: "susui",
+  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Various_sushi%2C_beautiful_October_night_at_midnight.jpg/640px-Various_sushi%2C_beautiful_October_night_at_midnight.jpg'
+},
+];
 function App() {
 
   return (
     <div className="App">
         <h1>Hello</h1>
-    <Food 
-    name='kimchi'
-    />
-        <Food 
-    name='ramen'
-    />
-        <Food 
-    name='kimbab'
-    />
-        <Food 
-    name='susui'
-    />
+          {foodILike.map((food, index) => (
+          
+    <Food key={index} name={food.name} picture={food.image}/>
+            
+          ))}
     </div>
   );
 }
 
 export default App;
  
-//jsx에서는 component에 정보를 보낼 수 있다.
-//component에서 component로, component에서 children component로 정보를 보내는 방법을 알아 봅시다.
-
-//App (application)에서 food component로 정보를 보내고 food Component에서 그 정보를 어떻게 사용하는지 볼 것이다.
-//부모와 child 관계 인가 ? 그럼 prop ? food component에 kimchi라는 value로 prop name을 줬다.
-//Food component의 argument로 prop을 넣을 것이다. console에 찍혀나오는 props는 props라고 불리는 한 argument의 내부이다.
-//object를 연다 = {}
-//object를 열어서 name을 꺼낼 것이다. = {name} 
-//즉, {name} 이나, props.name이나 같은거
+// 위와 같이 우리는 갖고 있지 않은 데이터를 복사 붙여넣기 할 수 없습니다.
+//데이터가 이미 API에서 왔다고 생각해봤을 때, 
+//이는 웹사이트에 동적 데이터를 추가하는 방법이다.
+//이를 위해 foodILike라고 불리는 array 를 생성한다.
+//위의 json 형태를 > array로 가져오고 > food를 이름과 함께 렌더링 하는가? 
+//friends.map((friend) => friend + ':)')
