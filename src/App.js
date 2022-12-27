@@ -2,64 +2,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Food({name, picture, rating}) {
- 
-  return (
-   <div>
-    <img src={picture} alt={picture}/>
-    <h3>{name}</h3>
-    <h5>평점: 5 / {rating}</h5>
-   </div>
-  )
-}
-
-const foodILike = [
-  {
-    id: 1,
-  name: "kimchi",
-  image: 'https://www.beyondkimchee.com/wp-content/uploads/2022/04/Kimchi-Jjigae-thumbnail.jpg',
-
-},
-{
-  id: 2,
-  name: "kimbab",
-  image: 'https://thumbs.dreamstime.com/z/kimbab-asian-style-gimbap-kimbap-korean-dish-made-steamed-white-rice-bap-various-other-ingredients-rolled-gim-81838757.jpg',
-  rating: 5,
-},
-{
-  id:3,
-  name: "susui",
-  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Various_sushi%2C_beautiful_October_night_at_midnight.jpg/640px-Various_sushi%2C_beautiful_October_night_at_midnight.jpg',
-  rating: 5,
-},
-];
-
-Food.propTypes={
-  name: PropTypes.string.isRequired,
-  picture: PropTypes.string.isRequired,
-  rating: PropTypes.number
-}
-//여기에 내가 얻고 싶은 props에 대한 설명을 적는다.
-function App() {
-
-  return (
-    <div className="App">
-        <h1>Hello</h1>
-         {foodILike.map((food) => (
-          <Food 
-            key={food.id}
-            name={food.name}
-            picture={food.image}
-            rating={food.rating}
-          />
-         ))}
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <h1>Time for State</h1>
+    )
+  }
 }
 
 export default App;
  
-// aim -부모 component로 부터 전달받은 props가 예상되는 props인지 어떻게 알 수 있는가 ?
+// aim - state
 
-//prop-types는 내가 전달받은 props가 내가 원하는 props인지를 확인해 준다.
+//state는 보통 우리가 동적 데이터와 함께 작업할 때 만들어진다. 
+//변하는 데이터와 존재하지 않는 데이터, 즉,  dynamic data를 이용한다.
+//따라서 prop의 예제에서 사용했던 custom 데이터를 사용할 수 없는 것이다.
+
+//지금까지는 functional component를 사용해봤습니다. 
+
+//aim - 드디어 class component를 배워볼 차례입니다.
+//class를 작성하고 이름을 App을 같습니다.
+
+//class App extends React.Component = " class App은 React Component입니다. "
+//react class component는 뒤에 많은 것을 가지고 있는데, 그 중 하나가 state입니다. 
+//component를 만들 때마다 모든 것을 다 구현할 필요가 없기 때문에  extends 한 이유입니다.
+
+//App component는 class이기 때문에 return을 가지고 있지 않습니다. 대신 render method를 갖고 있다.
+//react component는 render method를 가지고 있고, 내가 App component를 만들 때, extends 로 
+//react component에서 확장했기 때문에,
+//App component에서 render method를 사용할 수 있는 겁니다.
 
