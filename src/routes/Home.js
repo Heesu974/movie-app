@@ -62,7 +62,7 @@ class Home extends React.Component {
     );
   }
 }
-export default App;
+export default Home;
 
 //setState 의 default 값은 위와 값이 state 객체로 미리 지정할 필요는 없지만, 이렇게 하는 것이 좋은 습관,
 //즉, setState의 argument 자리에서 새롭게 추가가 가능하다.
