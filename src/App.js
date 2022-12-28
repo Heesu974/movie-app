@@ -23,3 +23,5 @@ export default App;
 
 //Route안에는 매우 주요한 props가 두 개 들어간다.
 //하나는 렌더링할 스크린이 들어가고, 다른 하나는 뭘 할 것인지 정해준다.
+
+//참고로, BrowserRouter는 github page에 정확히 설정하기 번거롭다. 그래서 hashRouter를 사용했다. 강의에서는
