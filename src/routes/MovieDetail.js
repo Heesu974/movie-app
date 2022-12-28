@@ -1,8 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, redirect } from "react-router-dom";
 
 function MovieDetail() {
   const location = useLocation();
+  const { pathname } = location;
+
+  console.log(location);
+  console.log(location.pathname);
 
   const {
     state: {

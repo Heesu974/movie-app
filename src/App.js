@@ -7,12 +7,12 @@ import Navigation from "./components/Navigation";
 
 function App() {
   return (
-    <Router basename="/movie-app/">
+    <Router basename="">
       <Navigation />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
-        <Route exact path="/movie-detail" element={<MovieDetail />} />
+        <Route exact path="/movie/:id" element={<MovieDetail />} />
       </Routes>
     </Router>
   );
