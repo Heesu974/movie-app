@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./routes/About";
 import Home from "./routes/Home";
+import MovieDetail from "./routes/MovieDetail";
 import Navigation from "./components/Navigation";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
+        <Route exact path="/movie-detail" element={<MovieDetail />} />
       </Routes>
     </Router>
   );

@@ -28,3 +28,6 @@ react-dom 16.8.6
 해당하는 route에서 props 인자를 통해 확인할 수 있었지만,
 react-router-dom v6가 되면서,
 useLocationㅇ르 이용하도록 바뀌었다.
+
+참고 사이트 -
+https://intrepidgeeks.com/tutorial/forwarding-status-via-responselink-router-v6
