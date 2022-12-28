@@ -5,10 +5,10 @@ class App extends React.Component {
     count: 0,
   };
   plus = () => {
-    console.log("Plus");
+    this.setState((current) => ({ count: current.count + 1 }));
   };
   minus = () => {
-    console.log("Minus");
+    this.setState((current) => ({ count: current.count - 1 }));
   };
   render() {
     return (
@@ -23,7 +23,9 @@ class App extends React.Component {
 
 export default App;
 
-//react는 자동적으로 모든 class component의 r8
-//state에는 바꾸고 싶은 데이터를 넣는다.
-//그렇다면, App에서 data를 어떻게 바꿀 것인가 ?
-//button에는 onClick이라는 prop이 기본적으로 들어 있다
+//minus = () => {
+//  this.state.count : - 1;
+//}
+// 이처럼 state를 직접 변경하지 마십시오. 내가 state를 직접 변경하려고 하면, react는 render function을 refresh 하지 않기 때문이다.
+//즉, react는 매범ㄴ state를 변경할 때 render function 을 호출해서 바꿔주길 원한다.
+//setState를 사용하지 않으면, 새 state와 함께 render function이 호출되지 않을 겁니다.
